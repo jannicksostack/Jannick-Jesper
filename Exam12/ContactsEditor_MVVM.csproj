@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataAccess\KommuneDataRepository.cs" />
     <Compile Include="DataAccess\KommuneRepository.cs" />
     <Compile Include="KommuneMainWindow.xaml.cs">
       <DependentUpon>KommuneMainWindow.xaml</DependentUpon>
@@ -66,8 +67,14 @@
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\KommuneViewModel.cs" />
     <Compile Include="ViewModel\ZipViewModel.cs" />
+    <Compile Include="View\CreateKommuneWindow.xaml.cs">
+      <DependentUpon>CreateKommuneWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CreateWindow.xaml.cs">
       <DependentUpon>CreateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateKommuneWindow.xaml.cs">
+      <DependentUpon>UpdateKommuneWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UpdateWindow.xaml.cs">
       <DependentUpon>UpdateWindow.xaml</DependentUpon>
@@ -97,7 +104,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\CreateKommuneWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CreateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UpdateKommuneWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

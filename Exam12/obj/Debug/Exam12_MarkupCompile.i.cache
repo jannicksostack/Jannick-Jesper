@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\
+C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\
 Exam12
 none
 false
 DEBUG;TRACE
-D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\App.xaml
-6-224269976
+C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\App.xaml
+8538233159
 
-241973027312
+27-1502858661
 13-265393417
-KommuneMainWindow.xaml;MainWindow.xaml;View\CreateWindow.xaml;View\UpdateWindow.xaml;View\KommuneWindow.xaml;View\ZipWindow.xaml;
+KommuneMainWindow.xaml;MainWindow.xaml;View\CreateKommuneWindow.xaml;View\CreateWindow.xaml;View\UpdateKommuneWindow.xaml;View\UpdateWindow.xaml;View\KommuneWindow.xaml;View\ZipWindow.xaml;
 
 False
 
