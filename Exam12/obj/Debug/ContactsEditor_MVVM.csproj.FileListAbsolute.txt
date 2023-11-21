@@ -1,0 +1,64 @@
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\MainWindow.baml
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\View\CreateWindow.baml
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\View\UpdateWindow.baml
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\View\ZipWindow.baml
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\MainWindow.g.cs
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\View\CreateWindow.g.cs
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\View\UpdateWindow.g.cs
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\View\ZipWindow.g.cs
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\App.g.cs
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12_MarkupCompile.cache
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12.g.resources
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12.Properties.Resources.resources
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\ContactsEditor_MVVM.csproj.GenerateResource.cache
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12.exe
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12.pdb
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\bin\Debug\Exam12.exe.config
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\bin\Debug\Exam12.exe
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\bin\Debug\Exam12.pdb
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\ContactsEditor_MVVM.csproj.CoreCompileInputs.cache
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 2 - ADO Net 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\ContactsEditor_MVVM.csprojAssemblyReference.cache
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\bin\Debug\Exam12.exe.config
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\bin\Debug\Exam12.exe
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\bin\Debug\Exam12.pdb
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\ContactsEditor_MVVM.csproj.AssemblyReference.cache
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\MainWindow.baml
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\View\CreateWindow.baml
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\View\UpdateWindow.baml
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\View\ZipWindow.baml
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\MainWindow.g.cs
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\View\CreateWindow.g.cs
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\View\UpdateWindow.g.cs
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\View\ZipWindow.g.cs
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\App.g.cs
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12_MarkupCompile.cache
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12.g.resources
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12.Properties.Resources.resources
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\ContactsEditor_MVVM.csproj.GenerateResource.cache
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\ContactsEditor_MVVM.csproj.CoreCompileInputs.cache
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12.exe
+D:\Undervisning\1 sem PrgTek\PrgTek13\Session 5 OLD - Contacts Db Øvelse 2\WPF Apps\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12.pdb
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\bin\Debug\Exam12.exe.config
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\bin\Debug\Exam12.exe
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\bin\Debug\Exam12.pdb
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\ContactsEditor_MVVM.csproj.AssemblyReference.cache
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\MainWindow.baml
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\View\CreateWindow.baml
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\View\UpdateWindow.baml
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\View\ZipWindow.baml
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\MainWindow.g.cs
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\View\CreateWindow.g.cs
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\View\UpdateWindow.g.cs
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\View\ZipWindow.g.cs
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\App.g.cs
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12_MarkupCompile.cache
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12.g.resources
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12.Properties.Resources.resources
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\ContactsEditor_MVVM.csproj.GenerateResource.cache
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\ContactsEditor_MVVM.csproj.CoreCompileInputs.cache
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12.exe
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\Exam12.pdb
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\View\KommuneWindow.baml
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\View\KommuneWindow.g.cs
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\KommuneMainWindow.baml
+D:\EADaniaProjects\2023_11_20\ContactsEditor_MVVM\Exam12\obj\Debug\KommuneMainWindow.g.cs
