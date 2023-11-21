@@ -13,15 +13,13 @@ namespace ContactsEditor_MVVM.ViewModel
     public RelayCommand ZipCommand { get; private set; }
     public RelayCommand KommuneCommand { get; private set; }
     public RelayCommand ClearCommand { get; private set; }
-    public static ContactRepository repository = new ContactRepository();
-    private ObservableCollection<Contact> contacts;
-    private string phone = "";
-    private string fname = "";
-    private string lname = "";
-    private string addr = "";
+    public static KommuneDataRepository repository = new KommuneDataRepository();
+    private ObservableCollection<KommuneData> contacts;
+    private string oldAgeGrp = "";
+    private string midAgeGrp = "";
+    private string youngAgeGrp = "";
     private string code = "";
     private string city = "";
-    private string title = "";
 
     public KommuneMainViewModel()
     {
@@ -30,16 +28,16 @@ namespace ContactsEditor_MVVM.ViewModel
       ZipCommand = new RelayCommand(p => (new ZipWindow()).ShowDialog());
       KommuneCommand = new RelayCommand(p => new KommuneWindow().ShowDialog());
       ClearCommand = new RelayCommand(p => Clear());
-      contacts = new ObservableCollection<Contact>(repository);
+      contacts = new ObservableCollection<KommuneData>(repository);
       repository.RepositoryChanged += Refresh;
     }
 
     private void Refresh(object sender, DbEventArgs e)
     {
-      Contacts = new ObservableCollection<Contact>(repository);
+      Contacts = new ObservableCollection<KommuneData>(repository);
     }
 
-    public ObservableCollection<Contact> Contacts
+    public ObservableCollection<KommuneData> Contacts
     {
       get { return contacts; }
       set
@@ -52,45 +50,45 @@ namespace ContactsEditor_MVVM.ViewModel
       }
     }
 
-    public string Phone
+    public string OldAgeGrp
     {
-      get { return phone; }
+      get { return oldAgeGrp; }
       set
       {
-        if (!phone.Equals(value))
+        if (!oldAgeGrp.Equals(value))
         {
-          phone = value;
-          OnPropertyChanged("Phone");
+          oldAgeGrp = value;
+          OnPropertyChanged("OldAgeGrp");
         }
       }
     }
 
-    public string Fname
+    public string MidAgeGrp
     {
-      get { return fname; }
+      get { return midAgeGrp; }
       set
       {
-        if (!fname.Equals(value))
+        if (!midAgeGrp.Equals(value))
         {
-          fname = value;
-          OnPropertyChanged("Fname");
+          midAgeGrp = value;
+          OnPropertyChanged("MidAgeGrp");
         }
       }
     }
 
-    public string Lname
+    public string YoungAgeGrp
     {
-      get { return lname; }
+      get { return youngAgeGrp; }
       set
       {
-        if (!lname.Equals(value))
+        if (!youngAgeGrp.Equals(value))
         {
-          lname = value;
-          OnPropertyChanged("Lname");
+          youngAgeGrp = value;
+          OnPropertyChanged("YoungAgeGrp");
         }
       }
     }
-
+        /*
     public string Addr
     {
       get { return addr; }
@@ -103,7 +101,7 @@ namespace ContactsEditor_MVVM.ViewModel
         }
       }
     }
-
+        */
     public string Code
     {
       get { return code; }
@@ -129,7 +127,7 @@ namespace ContactsEditor_MVVM.ViewModel
         }
       }
     }
-
+        /*
     public string Title
     {
       get { return title; }
@@ -142,24 +140,22 @@ namespace ContactsEditor_MVVM.ViewModel
         }
       }
     }
-
+        */
     private void Clear()
     {
-      Phone = "";
-      Fname = "";
-      Lname = "";
-      Addr = "";
+      OldAgeGrp = "";
+      MidAgeGrp = "";
+      YoungAgeGrp = "";
       Code = "";
       City = "";
-      Title = "";
     }
 
     private void Search()
     {
       try
       {
-        repository.Search(phone, fname, lname, addr, code, city, title);
-        Contacts = new ObservableCollection<Contact>(repository);
+        repository.Search(oldAgeGrp, midAgeGrp, youngAgeGrp, code, city);
+        Contacts = new ObservableCollection<KommuneData>(repository);
       }
       catch (Exception ex)
       {
@@ -175,10 +171,9 @@ namespace ContactsEditor_MVVM.ViewModel
 
     private bool CanSearch()
     {
-      return phone.Length > 0 || fname.Length > 0 || 
-                lname.Length > 0 || addr.Length > 0 || 
-                code.Length > 0 || city.Length > 0 || 
-                title.Length > 0;
+      return oldAgeGrp.Length > 0 || midAgeGrp.Length > 0 || 
+                youngAgeGrp.Length > 0 || 
+                code.Length > 0 || city.Length > 0;
     }    
   }
 }

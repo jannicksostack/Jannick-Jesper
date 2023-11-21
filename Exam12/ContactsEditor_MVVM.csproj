@@ -60,6 +60,7 @@
     <Compile Include="KommuneMainWindow.xaml.cs">
       <DependentUpon>KommuneMainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\KommuneData.cs" />
     <Compile Include="Model\Kommune.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\KommuneMainViewModel.cs" />

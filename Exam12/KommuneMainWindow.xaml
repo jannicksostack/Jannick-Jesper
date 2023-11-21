@@ -32,9 +32,9 @@
             <TextBlock Grid.Column="2" VerticalAlignment="Bottom" Text="65+ aar"/>
             <TextBlock Grid.Column="4" VerticalAlignment="Bottom" Text="Zipcode"/>
             <TextBlock Grid.Column="5" VerticalAlignment="Bottom" Text="City"/>
-            <TextBox Grid.Row="1" Grid.Column="0" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Phone}" />
-      <TextBox Grid.Row="1" Grid.Column="1" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Fname}" />
-      <TextBox Grid.Row="1" Grid.Column="2" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Lname}" />
+            <TextBox Grid.Row="1" Grid.Column="0" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=YoungAgeGrp}" />
+      <TextBox Grid.Row="1" Grid.Column="1" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=MidAgeGrp}" />
+      <TextBox Grid.Row="1" Grid.Column="2" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=OldAgeGrp}" />
             <TextBox Grid.Row="1" Grid.Column="4" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Code}" />
       <TextBox Grid.Row="1" Grid.Column="5" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=City}" />
             <Button Grid.Row="1" Grid.Column="7" Width="60" Height="22" HorizontalAlignment="Right" VerticalAlignment="Top" Content="Search" Command="{Binding Path=SearchCommand}" />
@@ -45,11 +45,11 @@
           </Style>
         </DataGrid.RowStyle>
         <DataGrid.Columns>
-          <DataGridTextColumn Header="Zipcode" Width="200" Binding="{Binding Phone}" />
-          <DataGridTextColumn Header="City" Width="200" Binding="{Binding Firstname}" />
-          <DataGridTextColumn Header="0-17" Width="200" Binding="{Binding Lastname}" />
-          <DataGridTextColumn Header="17-64" Width="200" Binding="{Binding Address}" />
-                    <DataGridTextColumn Header="65+" Width="*" Binding="{Binding Zipcode}" />
+          <DataGridTextColumn Header="Zipcode" Width="200" Binding="{Binding Zipcode}" />
+          <DataGridTextColumn Header="City" Width="200" Binding="{Binding City}" />
+          <DataGridTextColumn Header="0-17" Width="200" Binding="{Binding YoungAgeGrp}" />
+          <DataGridTextColumn Header="17-64" Width="200" Binding="{Binding MidAgeGrp}" />
+                    <DataGridTextColumn Header="65+" Width="*" Binding="{Binding OldAgeGrp}" />
                 </DataGrid.Columns>
       </DataGrid>
     </Grid>

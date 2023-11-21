@@ -110,3 +110,8 @@ C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\ContactsEditor_M
 C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\ContactsEditor_MVVM.csproj.CoreCompileInputs.cache
 C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\Exam12.exe
 C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\Exam12.pdb
+C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\View\CreateKommuneWindow.g.cs
+C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\View\UpdateKommuneWindow.g.cs
+C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\Exam12_MarkupCompile.lref
+C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\View\CreateKommuneWindow.baml
+C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\View\UpdateKommuneWindow.baml

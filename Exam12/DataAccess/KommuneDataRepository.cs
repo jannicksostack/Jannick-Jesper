@@ -6,11 +6,11 @@ using ContactsEditor_MVVM.Model;
 
 namespace ContactsEditor_MVVM.DataAccess
 {
-  public class KommuneDataRepository : Repository, IEnumerable<Contact>
+  public class KommuneDataRepository : Repository, IEnumerable<KommuneData>
   {
-    private List<Contact> list = new List<Contact>();
+    private List<KommuneData> list = new List<KommuneData>();
 
-    public IEnumerator<Contact> GetEnumerator()
+    public IEnumerator<KommuneData> GetEnumerator()
     {
       return list.GetEnumerator();
     }
@@ -20,23 +20,23 @@ namespace ContactsEditor_MVVM.DataAccess
       return GetEnumerator();
     }
 
-    public void Search(string phone, string fname, string lname, string addr, string code, string city, string title)
+    public void Search(string OldAgeGrp, string MidAgeGrp, string YoungAgeGrp, string zipcode, string city)
     {
       try
       {
-        SqlCommand command = new SqlCommand("SELECT Phone, Lastname, Firstname, Address, Zipcode, City, Email, Title FROM Zipcodes, Addresses WHERE Zipcode = Code AND Phone LIKE @Phone AND Lastname LIKE @Lname AND Firstname LIKE @Fname AND Address LIKE @Addr AND Zipcode LIKE @Code AND Title LIKE @Title AND City LIKE @City", connection);
-        command.Parameters.Add(CreateParam("@Phone", phone + "%", SqlDbType.NVarChar));
-        command.Parameters.Add(CreateParam("@Lname", lname + "%", SqlDbType.NVarChar));
-        command.Parameters.Add(CreateParam("@Fname", fname + "%", SqlDbType.NVarChar));
-        command.Parameters.Add(CreateParam("@Addr", addr + "%", SqlDbType.NVarChar));
-        command.Parameters.Add(CreateParam("@Code", code + "%", SqlDbType.NVarChar));
-        command.Parameters.Add(CreateParam("@Title", title + "%", SqlDbType.NVarChar));
+        SqlCommand command = new SqlCommand("SELECT dbo.KommuneData.age_0_17, dbo.KommuneData.age_17_64, dbo.KommuneData.age_65, dbo.Kommune.Code, dbo.Kommune.Name " +
+            "FROM dbo.KommuneData INNER JOIN dbo.Kommune ON dbo.KommuneData.KommuneCode = dbo.Kommune.Code " +
+            "WHERE dbo.KommuneData.age_65 LIKE @OldAgeGrp AND dbo.KommuneData.age_17_64 LIKE @MidAgeGrp AND dbo.KommuneData.age_0_17 LIKE @YoungAgeGrp AND dbo.Kommune.Code LIKE @zipcode AND dbo.Kommune.Name LIKE @City", connection);
+        command.Parameters.Add(CreateParam("@OldAgeGrp", OldAgeGrp + "%", SqlDbType.NVarChar));
+        command.Parameters.Add(CreateParam("@MidAgeGrp", MidAgeGrp + "%", SqlDbType.NVarChar));
+        command.Parameters.Add(CreateParam("@YoungAgeGrp", YoungAgeGrp + "%", SqlDbType.NVarChar));
+        command.Parameters.Add(CreateParam("@zipcode", zipcode + "%", SqlDbType.NVarChar));
         command.Parameters.Add(CreateParam("@City", city + "%", SqlDbType.NVarChar));
         connection.Open();
         SqlDataReader reader = command.ExecuteReader();
         list.Clear();
-        while (reader.Read()) list.Add(new Contact(reader[0].ToString(), reader[2].ToString(), reader[1].ToString(), reader[3].ToString(), reader[4].ToString(), reader[5].ToString(), reader[6].ToString(), reader[7].ToString()));
-        OnChanged(DbOperation.SELECT, DbModeltype.Contact);
+        while (reader.Read()) list.Add(new KommuneData(reader[2].ToString(), reader[1].ToString(), reader[0].ToString(), reader[3].ToString(), reader[4].ToString()));
+        OnChanged(DbOperation.SELECT, DbModeltype.Kommune);
       }
       catch (Exception ex)
       {
@@ -107,7 +107,7 @@ namespace ContactsEditor_MVVM.DataAccess
           if (command.ExecuteNonQuery() == 1)
           {
             contact.City = ZipcodeRepository.GetCity(contact.Zipcode);
-            list.Add(contact);
+            // list.Add(contact);
             list.Sort();
             OnChanged(DbOperation.INSERT, DbModeltype.Contact);
             return;
@@ -127,12 +127,12 @@ namespace ContactsEditor_MVVM.DataAccess
       throw new DbException("Error in Contact repositiory: " + error);
     }
 
-    public void Update(string phone, string fname, string lname, string addr, string code, string email, string title)
+    public void Update(string OldAgeGrp, string MidAgeGrp, string YoungAgeGrp, string zipcode, string city)
     {
-      Update(new Contact(phone, fname, lname, addr, code, "", email, title));
+      Update(new KommuneData(OldAgeGrp, MidAgeGrp, YoungAgeGrp, zipcode, city));
     }
 
-    public void Update(Contact contact)
+    public void Update(KommuneData contact)
     {
       string error = "";
       if (contact.IsValid)
@@ -140,6 +140,7 @@ namespace ContactsEditor_MVVM.DataAccess
         try
         {
           SqlCommand command = new SqlCommand("UPDATE Addresses SET Lastname = @Lname, Firstname = @Fname, Address = @Addr, Zipcode = @Code, Email = @Mail, Title = @Title WHERE Phone = @Phone", connection);
+                    /*
           command.Parameters.Add(CreateParam("@Phone", contact.Phone, SqlDbType.NVarChar));
           command.Parameters.Add(CreateParam("@Lname", contact.Lastname, SqlDbType.NVarChar));
           command.Parameters.Add(CreateParam("@Fname", contact.Firstname, SqlDbType.NVarChar));
@@ -147,6 +148,7 @@ namespace ContactsEditor_MVVM.DataAccess
           command.Parameters.Add(CreateParam("@Code", contact.Zipcode, SqlDbType.NVarChar));
           command.Parameters.Add(CreateParam("@Mail", contact.Email, SqlDbType.NVarChar));
           command.Parameters.Add(CreateParam("@Title", contact.Title, SqlDbType.NVarChar));
+                    */
           connection.Open();
           if (command.ExecuteNonQuery() == 1)
           {
@@ -169,20 +171,19 @@ namespace ContactsEditor_MVVM.DataAccess
       throw new DbException("Error in Contact repositiory: " + error);
     }
 
-    private void UpdateList(Contact contact)
+    private void UpdateList(KommuneData contact)
     {
       for (int i = 0; i < list.Count; ++i)
-        if (list[i].Phone.Equals(contact.Phone))
+        if (list[i].Zipcode.Equals(contact.Zipcode))
         {
-          list[i].Firstname = contact.Firstname;
-          list[i].Lastname = contact.Lastname;
-          list[i].Address = contact.Address;
+          list[i].YoungAgeGrp = contact.YoungAgeGrp;
+          list[i].MidAgeGrp = contact.MidAgeGrp;
+          list[i].OldAgeGrp = contact.OldAgeGrp;
           list[i].Zipcode = contact.Zipcode;
           list[i].City = ZipcodeRepository.GetCity(contact.Zipcode);
-          list[i].Email = contact.Email;
-          list[i].Title = contact.Title;
           break;
         }
+
     }
 
     public void Remove(string phone)
@@ -195,7 +196,7 @@ namespace ContactsEditor_MVVM.DataAccess
         connection.Open();
         if (command.ExecuteNonQuery() == 1)
         {
-          list.Remove(new Contact(phone, "", "", "", "", "", "", ""));
+          list.Remove(new KommuneData(phone, "", "", "", ""));
           OnChanged(DbOperation.DELETE, DbModeltype.Contact);
           return;
         }
