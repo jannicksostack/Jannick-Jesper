@@ -122,7 +122,7 @@ namespace ContactsEditor_MVVM.Model
             return null;
             */
 
-            if (float.TryParse(age, out float temp))
+            if (float.TryParse(age.Replace('.',','), out float temp))
             {
                 return null;
             }

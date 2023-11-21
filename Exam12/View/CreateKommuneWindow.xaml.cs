@@ -21,10 +21,9 @@ namespace Exam12.View
     /// </summary>
     public partial class CreateKommuneWindow : Window
     {
-        private ContactViewModel model = new ContactViewModel(new Contact(), MainViewModel.repository);
+        private KommuneDataViewModel model = new KommuneDataViewModel(new KommuneData(), KommuneMainViewModel.repository);
         public CreateKommuneWindow()
         {
-            InitializeComponent();
             InitializeComponent();
             model.CloseHandler += delegate (object sender, EventArgs e) { Close(); };
             model.WarningHandler += delegate (object sender, MessageEventArgs e) {

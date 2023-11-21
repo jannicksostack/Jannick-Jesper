@@ -88,28 +88,28 @@ namespace ContactsEditor_MVVM.DataAccess
     //  throw new DbException("Error in Contact repositiory: " + error);
     //}
 
-    public void Add(Contact contact)
+    public void Add(KommuneData contact)
     {
       string error = "";
       if (contact.IsValid)
       {
         try
         {
-          SqlCommand command = new SqlCommand("INSERT INTO Addresses (Phone, Lastname, Firstname, Address, Zipcode, Email, Title) VALUES (@Phone, @Lname, @Fname, @Addr, @Code, @Mail, @Title)", connection);
-          command.Parameters.Add(CreateParam("@Phone", contact.Phone, SqlDbType.NVarChar));
-          command.Parameters.Add(CreateParam("@Lname", contact.Lastname, SqlDbType.NVarChar));
-          command.Parameters.Add(CreateParam("@Fname", contact.Firstname, SqlDbType.NVarChar));
-          command.Parameters.Add(CreateParam("@Addr", contact.Address, SqlDbType.NVarChar));
-          command.Parameters.Add(CreateParam("@Code", contact.Zipcode, SqlDbType.NVarChar));
-          command.Parameters.Add(CreateParam("@Mail", contact.Email, SqlDbType.NVarChar));
-          command.Parameters.Add(CreateParam("@Title", contact.Title, SqlDbType.NVarChar));
+                    contact.OldAgeGrp = contact.OldAgeGrp.Replace(',','.');
+                    contact.MidAgeGrp = contact.MidAgeGrp.Replace(',', '.');
+                    contact.YoungAgeGrp = contact.YoungAgeGrp.Replace(',', '.');
+                    SqlCommand command = new SqlCommand("INSERT INTO KommuneData (age_0_17, age_17_64, age_65, KommuneCode) VALUES (@YoungAgeGrp, @MidAgeGrp, @OldAgeGrp, @Zipcode)", connection);
+          command.Parameters.Add(CreateParam("@YoungAgeGrp", contact.YoungAgeGrp, SqlDbType.NVarChar));
+          command.Parameters.Add(CreateParam("@MidAgeGrp", contact.MidAgeGrp, SqlDbType.NVarChar));
+          command.Parameters.Add(CreateParam("@OldAgeGrp", contact.OldAgeGrp, SqlDbType.NVarChar));
+          command.Parameters.Add(CreateParam("@Zipcode", contact.Zipcode, SqlDbType.NVarChar));
           connection.Open();
           if (command.ExecuteNonQuery() == 1)
           {
-            contact.City = ZipcodeRepository.GetCity(contact.Zipcode);
-            // list.Add(contact);
+            contact.City = KommuneRepository.GetName(contact.Zipcode);
+            list.Add(contact);
             list.Sort();
-            OnChanged(DbOperation.INSERT, DbModeltype.Contact);
+            OnChanged(DbOperation.INSERT, DbModeltype.Kommune);
             return;
           }
           error = string.Format("Address could not be inserted in the database");

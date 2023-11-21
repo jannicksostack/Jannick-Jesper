@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using ContactsEditor_MVVM.Model;
 using ContactsEditor_MVVM.DataAccess;
 using ContactsEditor_MVVM.View;
+using Exam12.View;
 
 namespace ContactsEditor_MVVM.ViewModel
 {
@@ -24,7 +25,7 @@ namespace ContactsEditor_MVVM.ViewModel
     public KommuneMainViewModel()
     {
       SearchCommand = new RelayCommand(p => Search(), p => CanSearch());
-      CreateCommand = new RelayCommand(p => (new CreateWindow()).ShowDialog());
+      CreateCommand = new RelayCommand(p => (new CreateKommuneWindow()).ShowDialog());
       ZipCommand = new RelayCommand(p => (new ZipWindow()).ShowDialog());
       KommuneCommand = new RelayCommand(p => new KommuneWindow().ShowDialog());
       ClearCommand = new RelayCommand(p => Clear());

@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="Model\KommuneData.cs" />
     <Compile Include="Model\Kommune.cs" />
+    <Compile Include="ViewModel\KommuneDataViewModel.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\KommuneMainViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
