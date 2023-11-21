@@ -27,14 +27,14 @@
         <ColumnDefinition/>
         <ColumnDefinition Width="70"/>
       </Grid.ColumnDefinitions>
-      <TextBlock Grid.Column="0" VerticalAlignment="Bottom" Text="Phone"/>
-      <TextBlock Grid.Column="1" VerticalAlignment="Bottom" Text="First name"/>
-      <TextBlock Grid.Column="2" VerticalAlignment="Bottom" Text="Last name"/>
-      <TextBlock Grid.Column="3" VerticalAlignment="Bottom" Text="Address"/>
-      <TextBlock Grid.Column="4" VerticalAlignment="Bottom" Text="Zipcode"/>
-      <TextBlock Grid.Column="5" VerticalAlignment="Bottom" Text="City"/>
-      <TextBlock Grid.Column="6" VerticalAlignment="Bottom" Text="Title"/>
-      <TextBox Grid.Row="1" Grid.Column="0" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Phone}" />
+            <TextBlock Grid.Column="0" VerticalAlignment="Bottom"><Run Language="en-gb" Text="0-9 år"/></TextBlock>
+            <TextBlock Grid.Column="1" VerticalAlignment="Bottom"><Run Language="en-gb" Text="???"/></TextBlock>
+            <TextBlock Grid.Column="2" VerticalAlignment="Bottom"><Run Language="en-gb" Text="???"/></TextBlock>
+            <TextBlock Grid.Column="3" VerticalAlignment="Bottom"><Run Language="en-gb" Text="???"/></TextBlock>
+            <TextBlock Grid.Column="4" VerticalAlignment="Bottom"><Run Language="en-gb" Text="Code"/></TextBlock>
+            <TextBlock Grid.Column="5" VerticalAlignment="Bottom"><Run Language="en-gb" Text="Kommune"/></TextBlock>
+            <TextBlock Grid.Column="6" VerticalAlignment="Bottom"><Run Language="en-gb" Text="???"/></TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="0" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Phone}" />
       <TextBox Grid.Row="1" Grid.Column="1" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Fname}" />
       <TextBox Grid.Row="1" Grid.Column="2" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Lname}" />
       <TextBox Grid.Row="1" Grid.Column="3" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Addr}" />
@@ -42,7 +42,7 @@
       <TextBox Grid.Row="1" Grid.Column="5" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=City}" />
       <TextBox Grid.Row="1" Grid.Column="6" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Title}" />
       <Button Grid.Row="1" Grid.Column="7" Width="60" Height="22" HorizontalAlignment="Right" VerticalAlignment="Top" Content="Search" Command="{Binding Path=SearchCommand}" />
-      <DataGrid Name="grid" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single" Grid.Row="2" Grid.ColumnSpan="8" ItemsSource="{Binding Contacts}">
+      <DataGrid Name="grid" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single" Grid.Row="2" Grid.ColumnSpan="8" ItemsSource="{Binding Contacts}" SelectionChanged="grid_SelectionChanged">
         <DataGrid.RowStyle>
           <Style TargetType="{x:Type DataGridRow}">
             <EventSetter Event="MouseDoubleClick" Handler="grid_MouseDoubleClick"/>

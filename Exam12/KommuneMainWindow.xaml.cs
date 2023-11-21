@@ -34,5 +34,10 @@ namespace ContactsEditor_MVVM
         }
       }
     }
-  }
+
+        private void grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+    }
 }
