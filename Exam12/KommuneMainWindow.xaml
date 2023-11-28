@@ -2,56 +2,58 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="925" FontSize="12">
-  <DockPanel Margin="10">
-    <Menu DockPanel.Dock="Top">
-      <MenuItem Header="Functions">
-        <MenuItem Header="Create data" Command="{Binding Path=CreateCommand}" />
-        <MenuItem Header="Manage kommuner" Command="{Binding Path=KommuneCommand}" />
-        <Separator />
-        <MenuItem Header="Clear fields" Command="{Binding Path=ClearCommand}" />
-      </MenuItem>
-    </Menu>
-    <Grid>
-      <Grid.RowDefinitions>
-        <RowDefinition Height="30" />
-        <RowDefinition Height="40" />
-        <RowDefinition />
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="80"/>
-        <ColumnDefinition/>
-        <ColumnDefinition/>
-        <ColumnDefinition/>
-        <ColumnDefinition Width="60"/>
-        <ColumnDefinition Width="200"/>
-        <ColumnDefinition/>
-        <ColumnDefinition Width="70"/>
-      </Grid.ColumnDefinitions>
-      <TextBlock Grid.Column="0" VerticalAlignment="Bottom" Text="0-17 aar"/>
-      <TextBlock Grid.Column="1" VerticalAlignment="Bottom" Text="17-65 aar"/>
-            <TextBlock Grid.Column="2" VerticalAlignment="Bottom" Text="65+ aar"/>
-            <TextBlock Grid.Column="4" VerticalAlignment="Bottom" Text="Zipcode"/>
-            <TextBlock Grid.Column="5" VerticalAlignment="Bottom" Text="City"/>
-            <TextBox Grid.Row="1" Grid.Column="0" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=YoungAgeGrp}" />
-      <TextBox Grid.Row="1" Grid.Column="1" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=MidAgeGrp}" />
-      <TextBox Grid.Row="1" Grid.Column="2" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=OldAgeGrp}" />
-            <TextBox Grid.Row="1" Grid.Column="4" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Code}" />
-      <TextBox Grid.Row="1" Grid.Column="5" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=City}" />
+    <DockPanel Margin="10">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Functions">
+                <MenuItem Header="Create data" Command="{Binding Path=CreateCommand}" />
+                <MenuItem Header="Manage kommuner" Command="{Binding Path=KommuneCommand}" />
+                <Separator />
+                <MenuItem Header="Clear fields" Command="{Binding Path=ClearCommand}" />
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="40" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" VerticalAlignment="Bottom" Text="Year"/>
+            <TextBox Grid.Row="1" Grid.Column="0" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Year, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock Grid.Column="1" VerticalAlignment="Bottom" Text="Zipcode"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Code, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock Grid.Column="2" VerticalAlignment="Bottom" Text="City"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=City, UpdateSourceTrigger=PropertyChanged}" />
+
             <Button Grid.Row="1" Grid.Column="7" Width="60" Height="22" HorizontalAlignment="Right" VerticalAlignment="Top" Content="Search" Command="{Binding Path=SearchCommand}" />
-      <DataGrid Name="grid" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single" Grid.Row="2" Grid.ColumnSpan="8" ItemsSource="{Binding Contacts}">
-        <DataGrid.RowStyle>
-          <Style TargetType="{x:Type DataGridRow}">
-            <EventSetter Event="MouseDoubleClick" Handler="grid_MouseDoubleClick"/>
-          </Style>
-        </DataGrid.RowStyle>
-        <DataGrid.Columns>
-          <DataGridTextColumn Header="Zipcode" Width="200" Binding="{Binding Zipcode}" />
-          <DataGridTextColumn Header="City" Width="200" Binding="{Binding City}" />
-          <DataGridTextColumn Header="0-17" Width="200" Binding="{Binding YoungAgeGrp}" />
-          <DataGridTextColumn Header="17-64" Width="200" Binding="{Binding MidAgeGrp}" />
-                    <DataGridTextColumn Header="65+" Width="*" Binding="{Binding OldAgeGrp}" />
+
+            <DataGrid Name="grid" SelectedItem="" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single" Grid.Row="2" Grid.ColumnSpan="8" ItemsSource="{Binding Contacts}">
+                <DataGrid.RowStyle>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <EventSetter Event="MouseDoubleClick" Handler="grid_MouseDoubleClick"/>
+                    </Style>
+                </DataGrid.RowStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Year" Width="100" Binding="{Binding Year}" />
+                    <DataGridTextColumn Header="Zipcode" Width="100" Binding="{Binding Zipcode}" />
+                    <DataGridTextColumn Header="City" Width="*" Binding="{Binding City}" />
+                    <DataGridTextColumn Header="0-17" Width="150" Binding="{Binding YoungAgeGrp}" />
+                    <DataGridTextColumn Header="17-64" Width="150" Binding="{Binding MidAgeGrp}" />
+                    <DataGridTextColumn Header="65+" Width="150" Binding="{Binding OldAgeGrp}" />
                 </DataGrid.Columns>
-      </DataGrid>
-    </Grid>
-  </DockPanel>
+            </DataGrid>
+        </Grid>
+    </DockPanel>
 </Window>

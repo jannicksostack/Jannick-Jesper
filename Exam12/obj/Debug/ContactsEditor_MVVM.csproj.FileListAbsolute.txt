@@ -115,3 +115,8 @@ C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\View\UpdateKommu
 C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\Exam12_MarkupCompile.lref
 C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\View\CreateKommuneWindow.baml
 C:\Users\freja\Documents\GitHub\Jannick-Jesper\Exam12\obj\Debug\View\UpdateKommuneWindow.baml
+D:\EADaniaProjects\2023_11_21\Jannick-Jesper\Exam12\obj\Debug\View\CreateKommuneWindow.g.cs
+D:\EADaniaProjects\2023_11_21\Jannick-Jesper\Exam12\obj\Debug\View\UpdateKommuneWindow.g.cs
+D:\EADaniaProjects\2023_11_21\Jannick-Jesper\Exam12\obj\Debug\Exam12_MarkupCompile.lref
+D:\EADaniaProjects\2023_11_21\Jannick-Jesper\Exam12\obj\Debug\View\CreateKommuneWindow.baml
+D:\EADaniaProjects\2023_11_21\Jannick-Jesper\Exam12\obj\Debug\View\UpdateKommuneWindow.baml

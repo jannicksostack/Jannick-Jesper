@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using System.ComponentModel;
 using System.Linq;
+using System.Diagnostics;
 
 namespace ContactsEditor_MVVM.Model
 {
@@ -22,7 +23,9 @@ namespace ContactsEditor_MVVM.Model
         public string YoungAgeGrp { get; set; }      // efternavn
         public string Zipcode { get; set; }       // postnummer
         public string City { get; set; }          // bynavn
- 
+
+        public string Year { get; set; }
+
 
         // Opretter et objekt ved at sætte alle felter til blank.
         public KommuneData()
@@ -32,49 +35,51 @@ namespace ContactsEditor_MVVM.Model
             YoungAgeGrp = "";
             Zipcode = "";
             City = "";
-
+            Year = "";
         }
 
         // Opretter et objekt, hvor alle felter initialiseres med parametre.
         // Konstruktøren garanterer ikke, at objektet er lovligt.
-        public KommuneData(string OldAgeGrp, string MidAgeGrp, string YoungAgeGrp, string zipcode, string city)
+        public KommuneData(string OldAgeGrp, string MidAgeGrp, string YoungAgeGrp, string zipcode, string city, string year)
         {
             this.OldAgeGrp = OldAgeGrp;
             this.MidAgeGrp = MidAgeGrp;
             this.YoungAgeGrp = YoungAgeGrp;
             Zipcode = zipcode;
             City = city;
- 
+            Year = year;
         }
 
         // Implementerer sammenligning alene på telefonnummer.
         public override bool Equals(object obj)
         {
-            try
-            {
-                KommuneData contact = (KommuneData) obj;
-                return Zipcode.Equals(contact.Zipcode);
-            }
-            catch
+            KommuneData kommuneData = obj as KommuneData;
+
+            if (kommuneData is null)
             {
                 return false;
+            } else
+            {
+                return Zipcode.Equals(kommuneData.Zipcode) && Year.Equals(kommuneData.Year);
             }
         }
 
         public override int GetHashCode()
         {
+            // TODO
             return OldAgeGrp.GetHashCode();
         }
 
         // Implementerer ordning af adresse alene ud fra telefonnummeret
         public int CompareTo(KommuneData contact)
         {
+            // TODO
             return Zipcode.CompareTo(contact.Zipcode);
         }
 
         // Validering af objektet.
         // Arrayet angiver hvilke properties, der skal valideres.
-        private static readonly string[] validatedProperties = { "OldAgeGrp", "MidAgeGrp", "YoungAgeGrp", "Zipcode"};
+        private static readonly string[] validatedProperties = { "OldAgeGrp", "MidAgeGrp", "YoungAgeGrp", "Zipcode" };
 
         public bool IsValid
         {
@@ -113,6 +118,7 @@ namespace ContactsEditor_MVVM.Model
             return null;
         }
 
+
         // Valideringsmetoder til de enkelte properties.
         private string ValidateAgeGrp(string age)
         {
@@ -121,8 +127,7 @@ namespace ContactsEditor_MVVM.Model
             foreach (char c in OldAgeGrp) if (c < '0' || c > '9') return "Phone must be a number of 8 digits";
             return null;
             */
-
-            if (float.TryParse(age.Replace('.',','), out float temp))
+            if (float.TryParse(age.Replace('.', ','), out float temp))
             {
                 return null;
             }

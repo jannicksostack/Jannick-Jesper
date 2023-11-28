@@ -4,177 +4,171 @@ using ContactsEditor_MVVM.Model;
 using ContactsEditor_MVVM.DataAccess;
 using ContactsEditor_MVVM.View;
 using Exam12.View;
+using System.Data.OleDb;
+using System.Linq;
 
 namespace ContactsEditor_MVVM.ViewModel
 {
-  public class KommuneMainViewModel : ViewModelBase
-  {
-    public RelayCommand SearchCommand { get; private set; }
-    public RelayCommand CreateCommand { get; private set; }
-    public RelayCommand ZipCommand { get; private set; }
-    public RelayCommand KommuneCommand { get; private set; }
-    public RelayCommand ClearCommand { get; private set; }
-    public static KommuneDataRepository repository = new KommuneDataRepository();
-    private ObservableCollection<KommuneData> contacts;
-    private string oldAgeGrp = "";
-    private string midAgeGrp = "";
-    private string youngAgeGrp = "";
-    private string code = "";
-    private string city = "";
-
-    public KommuneMainViewModel()
+    public class KommuneMainViewModel : ViewModelBase
     {
-      SearchCommand = new RelayCommand(p => Search(), p => CanSearch());
-      CreateCommand = new RelayCommand(p => (new CreateKommuneWindow()).ShowDialog());
-      ZipCommand = new RelayCommand(p => (new ZipWindow()).ShowDialog());
-      KommuneCommand = new RelayCommand(p => new KommuneWindow().ShowDialog());
-      ClearCommand = new RelayCommand(p => Clear());
-      contacts = new ObservableCollection<KommuneData>(repository);
-      repository.RepositoryChanged += Refresh;
-    }
+        public RelayCommand SearchCommand { get; private set; }
+        public RelayCommand CreateCommand { get; private set; }
+        public RelayCommand ZipCommand { get; private set; }
+        public RelayCommand KommuneCommand { get; private set; }
+        public RelayCommand ClearCommand { get; private set; }
+        public static KommuneDataRepository repository = new KommuneDataRepository();
+        private ObservableCollection<KommuneData> contacts;
 
-    private void Refresh(object sender, DbEventArgs e)
-    {
-      Contacts = new ObservableCollection<KommuneData>(repository);
-    }
+        private string oldAgeGrp = "";
+        private string midAgeGrp = "";
+        private string youngAgeGrp = "";
+        private string code = "";
+        private string city = "";
+        private string year = "";
 
-    public ObservableCollection<KommuneData> Contacts
-    {
-      get { return contacts; }
-      set
-      {
-        if (!contacts.Equals(value))
+        public KommuneMainViewModel()
         {
-          contacts = value;
-          OnPropertyChanged("Contacts");
+            SearchCommand = new RelayCommand(p => Search(), p => CanSearch());
+            CreateCommand = new RelayCommand(p => (new CreateKommuneWindow()).ShowDialog());
+            ZipCommand = new RelayCommand(p => (new ZipWindow()).ShowDialog());
+            KommuneCommand = new RelayCommand(p => new KommuneWindow().ShowDialog());
+            ClearCommand = new RelayCommand(p => Clear());
+            contacts = new ObservableCollection<KommuneData>(repository);
+            repository.RepositoryChanged += Refresh;
+            Search();
         }
-      }
-    }
 
-    public string OldAgeGrp
-    {
-      get { return oldAgeGrp; }
-      set
-      {
-        if (!oldAgeGrp.Equals(value))
+        private void Refresh(object sender, DbEventArgs e)
         {
-          oldAgeGrp = value;
-          OnPropertyChanged("OldAgeGrp");
+            Contacts = new ObservableCollection<KommuneData>(repository);
         }
-      }
-    }
 
-    public string MidAgeGrp
-    {
-      get { return midAgeGrp; }
-      set
-      {
-        if (!midAgeGrp.Equals(value))
+        public ObservableCollection<KommuneData> Contacts
         {
-          midAgeGrp = value;
-          OnPropertyChanged("MidAgeGrp");
+            get { return contacts; }
+            set
+            {
+                if (!contacts.Equals(value))
+                {
+                    contacts = value;
+                    OnPropertyChanged("Contacts");
+                }
+            }
         }
-      }
-    }
 
-    public string YoungAgeGrp
-    {
-      get { return youngAgeGrp; }
-      set
-      {
-        if (!youngAgeGrp.Equals(value))
+        public string OldAgeGrp
         {
-          youngAgeGrp = value;
-          OnPropertyChanged("YoungAgeGrp");
+            get { return oldAgeGrp; }
+            set
+            {
+                if (!oldAgeGrp.Equals(value))
+                {
+                    oldAgeGrp = value;
+                    OnPropertyChanged("OldAgeGrp");
+                }
+            }
         }
-      }
-    }
-        /*
-    public string Addr
-    {
-      get { return addr; }
-      set
-      {
-        if (!addr.Equals(value))
-        {
-          addr = value;
-          OnPropertyChanged("Addr");
-        }
-      }
-    }
-        */
-    public string Code
-    {
-      get { return code; }
-      set
-      {
-        if (!code.Equals(value))
-        {
-          code = value;
-          OnPropertyChanged("Code");
-        }
-      }
-    }
 
-    public string City
-    {
-      get { return city; }
-      set
-      {
-        if (!city.Equals(value))
+        public string MidAgeGrp
         {
-          city = value;
-          OnPropertyChanged("City");
+            get { return midAgeGrp; }
+            set
+            {
+                if (!midAgeGrp.Equals(value))
+                {
+                    midAgeGrp = value;
+                    OnPropertyChanged("MidAgeGrp");
+                }
+            }
         }
-      }
-    }
-        /*
-    public string Title
-    {
-      get { return title; }
-      set
-      {
-        if (!title.Equals(value))
+
+        public string YoungAgeGrp
         {
-          title = value;
-          OnPropertyChanged("Title");
+            get { return youngAgeGrp; }
+            set
+            {
+                if (!youngAgeGrp.Equals(value))
+                {
+                    youngAgeGrp = value;
+                    OnPropertyChanged("YoungAgeGrp");
+                }
+            }
         }
-      }
-    }
-        */
-    private void Clear()
-    {
-      OldAgeGrp = "";
-      MidAgeGrp = "";
-      YoungAgeGrp = "";
-      Code = "";
-      City = "";
-    }
+        public string Code
+        {
+            get { return code; }
+            set
+            {
+                if (!code.Equals(value))
+                {
+                    code = value;
+                    OnPropertyChanged("Code");
+                }
+            }
+        }
 
-    private void Search()
-    {
-      try
-      {
-        repository.Search(oldAgeGrp, midAgeGrp, youngAgeGrp, code, city);
-        Contacts = new ObservableCollection<KommuneData>(repository);
-      }
-      catch (Exception ex)
-      {
-        OnWarning(ex.Message);
-      }
-    }
+        public string City
+        {
+            get { return city; }
+            set
+            {
+                if (!city.Equals(value))
+                {
+                    city = value;
+                    OnPropertyChanged("City");
+                }
+            }
+        }
 
-    public void UpdateContact(Contact contact)
-    {
-      UpdateWindow dlg = new UpdateWindow(contact);
-      dlg.ShowDialog();
-    }
+        public string Year
+        {
+            get { return year; }
+            set
+            {
+                if (!year.Equals(value))
+                {
+                    year = value;
+                    OnPropertyChanged("Year");
+                }
+            }
+        }
+        private void Clear()
+        {
+            OldAgeGrp = "";
+            MidAgeGrp = "";
+            YoungAgeGrp = "";
+            Code = "";
+            City = "";
+            Year = "";
+        }
 
-    private bool CanSearch()
-    {
-      return oldAgeGrp.Length > 0 || midAgeGrp.Length > 0 || 
-                youngAgeGrp.Length > 0 || 
-                code.Length > 0 || city.Length > 0;
-    }    
-  }
+        private void Search()
+        {
+            try
+            {
+                repository.Search(code, city, year);
+                Contacts = new ObservableCollection<KommuneData>(repository);
+            }
+            catch (Exception ex)
+            {
+                OnWarning(ex.Message);
+            }
+        }
+
+        public void UpdateContact(Contact contact)
+        {
+            UpdateWindow dlg = new UpdateWindow(contact);
+            dlg.ShowDialog();
+        }
+
+        private bool CanSearch()
+        {
+            return true;
+            /*
+            return oldAgeGrp.Length > 0 || midAgeGrp.Length > 0 ||
+                      youngAgeGrp.Length > 0 ||
+                      code.Length > 0 || city.Length > 0 || year.Length > 0;
+            */
+        }
+    }
 }
