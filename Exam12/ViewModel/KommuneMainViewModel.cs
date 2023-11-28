@@ -32,7 +32,7 @@ namespace ContactsEditor_MVVM.ViewModel
         {
             SearchCommand = new RelayCommand(p => Search(), p => CanSearch());
             CreateCommand = new RelayCommand(p => (new CreateKommuneWindow()).ShowDialog());
-            ZipCommand = new RelayCommand(p => (new ZipWindow()).ShowDialog());
+           //  ZipCommand = new RelayCommand(p => (new ZipWindow()).ShowDialog());
             UpdateCommand = new RelayCommand(p => new UpdateKommuneWindow(Selected).ShowDialog());
             KommuneCommand = new RelayCommand(p => new KommuneWindow().ShowDialog());
             ClearCommand = new RelayCommand(p => Clear());
@@ -65,6 +65,7 @@ namespace ContactsEditor_MVVM.ViewModel
             get { return selected; }
             set
             {
+                if (value == null) { return; }
                 if (!selected.Equals(value))
                 {
                     selected = value;
@@ -170,13 +171,13 @@ namespace ContactsEditor_MVVM.ViewModel
                 OnWarning(ex.Message);
             }
         }
-
+        /*
         public void UpdateContact(Contact contact)
         {
             UpdateWindow dlg = new UpdateWindow(contact);
             dlg.ShowDialog();
         }
-
+        */
         private bool CanSearch()
         {
             return true;

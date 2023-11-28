@@ -25,9 +25,7 @@ namespace ContactsEditor_MVVM
       {
         try
         {
-          DataGridRow row = sender as DataGridRow;
-          Contact contact = (Contact)row.Item;
-          model.UpdateContact(contact);
+
         }
         catch
         {

@@ -85,10 +85,18 @@ namespace ContactsEditor_MVVM.ViewModel
             get { return model; }
             set
             {
-                model = value;
-                OnPropertyChanged("Code");
-                OnPropertyChanged("Name");
-                OnPropertyChanged("SelectedModel");
+                if(value == null)
+                {
+                    return;
+                }
+                else
+                {
+                    model = value;
+                    OnPropertyChanged("Code");
+                    OnPropertyChanged("Name");
+                    OnPropertyChanged("SelectedModel");
+                }
+                
             }
         }
 

@@ -64,35 +64,19 @@
     <Compile Include="Model\Kommune.cs" />
     <Compile Include="ViewModel\UpdateKommuneViewModel.cs" />
     <Compile Include="ViewModel\KommuneDataViewModel.cs" />
-    <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\KommuneMainViewModel.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\KommuneViewModel.cs" />
-    <Compile Include="ViewModel\ZipViewModel.cs" />
     <Compile Include="View\CreateKommuneWindow.xaml.cs">
       <DependentUpon>CreateKommuneWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\CreateWindow.xaml.cs">
-      <DependentUpon>CreateWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UpdateKommuneWindow.xaml.cs">
       <DependentUpon>UpdateKommuneWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpdateWindow.xaml.cs">
-      <DependentUpon>UpdateWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\KommuneWindow.xaml.cs">
       <DependentUpon>KommuneWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ZipWindow.xaml.cs">
-      <DependentUpon>ZipWindow.xaml</DependentUpon>
-    </Compile>
     <Page Include="KommuneMainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -100,18 +84,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataAccess\ContactRepository.cs" />
     <Compile Include="DataAccess\Repository.cs" />
-    <Compile Include="DataAccess\ZipcodeRepository.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Page Include="View\CreateKommuneWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\CreateWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,22 +93,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UpdateWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\KommuneWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\ZipWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Contact.cs" />
-    <Compile Include="Model\Zipcode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
