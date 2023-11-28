@@ -2,11 +2,12 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="925" FontSize="12">
-  <DockPanel Margin="10">
+  <DockPanel Margin="10"> 
     <Menu DockPanel.Dock="Top">
       <MenuItem Header="Functions">
         <MenuItem Header="Create data" Command="{Binding Path=CreateCommand}" />
         <MenuItem Header="Manage kommuner" Command="{Binding Path=KommuneCommand}" />
+        <MenuItem Header="Update kommuner" Command="{Binding Path=UpdateCommand}"/>
         <Separator />
         <MenuItem Header="Clear fields" Command="{Binding Path=ClearCommand}" />
       </MenuItem>
@@ -38,7 +39,7 @@
             <TextBox Grid.Row="1" Grid.Column="4" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Code}" />
       <TextBox Grid.Row="1" Grid.Column="5" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=City}" />
             <Button Grid.Row="1" Grid.Column="7" Width="60" Height="22" HorizontalAlignment="Right" VerticalAlignment="Top" Content="Search" Command="{Binding Path=SearchCommand}" />
-      <DataGrid Name="grid" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single" Grid.Row="2" Grid.ColumnSpan="8" ItemsSource="{Binding Contacts}">
+      <DataGrid SelectedItem="{Binding Selected}" Name="grid" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single" Grid.Row="2" Grid.ColumnSpan="8" ItemsSource="{Binding Contacts}">
         <DataGrid.RowStyle>
           <Style TargetType="{x:Type DataGridRow}">
             <EventSetter Event="MouseDoubleClick" Handler="grid_MouseDoubleClick"/>

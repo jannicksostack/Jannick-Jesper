@@ -13,6 +13,7 @@ namespace ContactsEditor_MVVM.ViewModel
     public RelayCommand CreateCommand { get; private set; }
     public RelayCommand ZipCommand { get; private set; }
     public RelayCommand KommuneCommand { get; private set; }
+    public RelayCommand UpdateCommand { get; private set; } // create methods for this command.
     public RelayCommand ClearCommand { get; private set; }
     public static KommuneDataRepository repository = new KommuneDataRepository();
     private ObservableCollection<KommuneData> contacts;
@@ -28,6 +29,7 @@ namespace ContactsEditor_MVVM.ViewModel
       CreateCommand = new RelayCommand(p => (new CreateKommuneWindow()).ShowDialog());
       ZipCommand = new RelayCommand(p => (new ZipWindow()).ShowDialog());
       KommuneCommand = new RelayCommand(p => new KommuneWindow().ShowDialog());
+      UpdateCommand = new RelayCommand(p => new UpdateKommuneWindow(Selected).ShowDialog());
       ClearCommand = new RelayCommand(p => Clear());
       contacts = new ObservableCollection<KommuneData>(repository);
       repository.RepositoryChanged += Refresh;
@@ -63,8 +65,21 @@ namespace ContactsEditor_MVVM.ViewModel
         }
       }
     }
+        private KommuneData selected = new KommuneData();
+        public KommuneData Selected
+        {
+            get { return selected; }
+            set
+            {
+                if (!selected.Equals(value))
+                {
+                    selected = value;
+                    OnPropertyChanged("Selected");
+                }
+            }
+        }
 
-    public string MidAgeGrp
+        public string MidAgeGrp
     {
       get { return midAgeGrp; }
       set

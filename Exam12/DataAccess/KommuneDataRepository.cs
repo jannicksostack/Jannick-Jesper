@@ -139,16 +139,13 @@ namespace ContactsEditor_MVVM.DataAccess
       {
         try
         {
-          SqlCommand command = new SqlCommand("UPDATE Addresses SET Lastname = @Lname, Firstname = @Fname, Address = @Addr, Zipcode = @Code, Email = @Mail, Title = @Title WHERE Phone = @Phone", connection);
-                    /*
-          command.Parameters.Add(CreateParam("@Phone", contact.Phone, SqlDbType.NVarChar));
-          command.Parameters.Add(CreateParam("@Lname", contact.Lastname, SqlDbType.NVarChar));
-          command.Parameters.Add(CreateParam("@Fname", contact.Firstname, SqlDbType.NVarChar));
-          command.Parameters.Add(CreateParam("@Addr", contact.Address, SqlDbType.NVarChar));
+          SqlCommand command = new SqlCommand("UPDATE KommuneData SET age_0_17 = @YoungAgeGrp, age_17_64 = @MidAgeGrp, age_65 = @OldAgeGrp WHERE KommuneCode = @Code", connection);
+                    
+          command.Parameters.Add(CreateParam("@YoungAgeGrp", contact.YoungAgeGrp, SqlDbType.NVarChar));
+          command.Parameters.Add(CreateParam("@MidAgeGrp", contact.MidAgeGrp, SqlDbType.NVarChar));
+          command.Parameters.Add(CreateParam("@OldAgeGrp", contact.OldAgeGrp, SqlDbType.NVarChar));
           command.Parameters.Add(CreateParam("@Code", contact.Zipcode, SqlDbType.NVarChar));
-          command.Parameters.Add(CreateParam("@Mail", contact.Email, SqlDbType.NVarChar));
-          command.Parameters.Add(CreateParam("@Title", contact.Title, SqlDbType.NVarChar));
-                    */
+                    
           connection.Open();
           if (command.ExecuteNonQuery() == 1)
           {
@@ -180,23 +177,23 @@ namespace ContactsEditor_MVVM.DataAccess
           list[i].MidAgeGrp = contact.MidAgeGrp;
           list[i].OldAgeGrp = contact.OldAgeGrp;
           list[i].Zipcode = contact.Zipcode;
-          list[i].City = ZipcodeRepository.GetCity(contact.Zipcode);
+          list[i].City = KommuneRepository.GetName(contact.Zipcode);
           break;
         }
 
     }
 
-    public void Remove(string phone)
+    public void Remove(string code)
     {
       string error = "";
       try
       {
-        SqlCommand command = new SqlCommand("DELETE FROM Addresses WHERE Phone = @Phone", connection);
-        command.Parameters.Add(CreateParam("@Phone", phone, SqlDbType.NVarChar));
+        SqlCommand command = new SqlCommand("DELETE FROM KommuneData WHERE KommuneCode = @Code", connection);
+        command.Parameters.Add(CreateParam("@Code", code, SqlDbType.NVarChar));
         connection.Open();
         if (command.ExecuteNonQuery() == 1)
         {
-          list.Remove(new KommuneData(phone, "", "", "", ""));
+          list.Remove(new KommuneData(code, "", "", "", ""));
           OnChanged(DbOperation.DELETE, DbModeltype.Contact);
           return;
         }
