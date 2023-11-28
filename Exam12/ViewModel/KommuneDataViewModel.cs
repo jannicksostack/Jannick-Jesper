@@ -161,6 +161,7 @@ namespace ContactsEditor_MVVM.ViewModel
                     CloseCommand.Execute(null);
                 }
                 catch (Exception ex)
+
                 {
                     OnWarning(ex.Message);
                 }
