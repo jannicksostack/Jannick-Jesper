@@ -17,11 +17,11 @@
         <TextBlock Text="65+ aar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,145,0,0" />
         <TextBlock Text="City" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,194,0,0" />
         <TextBlock Text="Zipcode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,234,0,0" />
-        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,70,0,0" Width="280" Height="22" Text="{Binding Path=Firstname}" />
-        <TextBox Name="txtMidAgeGrp" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,110,0,0" Width="200" Height="22" Text="{Binding Path=Lastname, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Validation.ErrorTemplate="{x:Null}" />
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,70,0,0" Width="280" Height="22" Text="{Binding Path=YoungGrpArr}" />
+        <TextBox Name="txtMidAgeGrp" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,110,0,0" Width="200" Height="22" Text="{Binding Path=MidAgeGrp, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Validation.ErrorTemplate="{x:Null}" />
         <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,135,0,0" Height="20" Content="{Binding ElementName=txtLastname, Path=(Validation.Errors).CurrentItem}" />
-        <TextBox x:Name="txtOldAgeGrp" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,145,0,0" Width="200" Height="22" Text="{Binding Lastname, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{x:Null}" />
-        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,194,0,0" Width="280" Height="22" Text="{Binding Path=Address}" />
+        <TextBox x:Name="txtOldAgeGrp" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,145,0,0" Width="200" Height="22" Text="{Binding OldAgeGrp, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{x:Null}" />
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,194,0,0" Width="280" Height="22" Text="{Binding Path=City}" />
         <TextBox Name="txtZipcode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,234,0,0" Width="50" Height="22" Text="{Binding Path=Zipcode, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Validation.ErrorTemplate="{x:Null}" />
         <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,235,0,0" Height="20" Content="{Binding ElementName=txtZipcode, Path=(Validation.Errors).CurrentItem}" />
         <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,295,0,0" Height="20" Content="{Binding ElementName=txtEmail, Path=(Validation.Errors).CurrentItem}" />

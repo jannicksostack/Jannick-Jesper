@@ -8,9 +8,9 @@
         <TextBlock FontStyle="Italic" FontSize="10" Foreground="Red" HorizontalAlignment="Right" VerticalAlignment="Top" Text="{Binding Path=ErrorContent}" />
       </DataTemplate>
     </Grid.Resources>
-    <TextBlock Text="Phone number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" />
-    <TextBlock Text="First name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,70,0,0" />
-    <TextBlock Text="Last name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,110,0,0" />
+        <TextBlock Text="Zipcode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" />
+    <TextBlock Text="City" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,70,0,0" />
+    <TextBlock Text="0-17 aar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,110,0,0" />
     <TextBlock Text="Address" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,170,0,0" />
     <TextBlock Text="Zipcode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,210,0,0" />
     <TextBlock Text="Email address" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,270,0,0" />

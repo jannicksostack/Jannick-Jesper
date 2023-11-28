@@ -21,10 +21,10 @@ namespace Exam12.View
     /// </summary>
     public partial class UpdateKommuneWindow : Window
     {
-        private ContactViewModel model;
-        public UpdateKommuneWindow(Contact contact)
+        private UpdateKommuneViewModel model;
+        public UpdateKommuneWindow(KommuneData contact)
         {
-            model = new ContactViewModel(contact, MainViewModel.repository);
+            model = new UpdateKommuneViewModel(contact, KommuneMainViewModel.repository);
             InitializeComponent();
             model.CloseHandler += delegate (object sender, EventArgs e) { Close(); };
             model.WarningHandler += delegate (object sender, MessageEventArgs e) {
