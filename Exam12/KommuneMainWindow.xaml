@@ -7,6 +7,7 @@
             <MenuItem Header="Functions">
                 <MenuItem Header="Create data" Command="{Binding Path=CreateCommand}" />
                 <MenuItem Header="Manage kommuner" Command="{Binding Path=KommuneCommand}" />
+                <MenuItem Header="Update kommuner" Command="{Binding Path=UpdateCommand}" />
                 <Separator />
                 <MenuItem Header="Clear fields" Command="{Binding Path=ClearCommand}" />
             </MenuItem>
@@ -39,7 +40,7 @@
 
             <Button Grid.Row="1" Grid.Column="7" Width="60" Height="22" HorizontalAlignment="Right" VerticalAlignment="Top" Content="Search" Command="{Binding Path=SearchCommand}" />
 
-            <DataGrid Name="grid" SelectedItem="" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single" Grid.Row="2" Grid.ColumnSpan="8" ItemsSource="{Binding Contacts}">
+            <DataGrid SelectedItem="{Binding Selected}" Name="grid" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single" Grid.Row="2" Grid.ColumnSpan="8" ItemsSource="{Binding Contacts}">
                 <DataGrid.RowStyle>
                     <Style TargetType="{x:Type DataGridRow}">
                         <EventSetter Event="MouseDoubleClick" Handler="grid_MouseDoubleClick"/>

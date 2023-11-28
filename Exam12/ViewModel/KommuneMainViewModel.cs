@@ -6,6 +6,7 @@ using ContactsEditor_MVVM.View;
 using Exam12.View;
 using System.Data.OleDb;
 using System.Linq;
+using System.Windows.Controls.Primitives;
 
 namespace ContactsEditor_MVVM.ViewModel
 {
@@ -15,6 +16,7 @@ namespace ContactsEditor_MVVM.ViewModel
         public RelayCommand CreateCommand { get; private set; }
         public RelayCommand ZipCommand { get; private set; }
         public RelayCommand KommuneCommand { get; private set; }
+        public RelayCommand UpdateCommand { get; private set; }
         public RelayCommand ClearCommand { get; private set; }
         public static KommuneDataRepository repository = new KommuneDataRepository();
         private ObservableCollection<KommuneData> contacts;
@@ -31,6 +33,7 @@ namespace ContactsEditor_MVVM.ViewModel
             SearchCommand = new RelayCommand(p => Search(), p => CanSearch());
             CreateCommand = new RelayCommand(p => (new CreateKommuneWindow()).ShowDialog());
             ZipCommand = new RelayCommand(p => (new ZipWindow()).ShowDialog());
+            UpdateCommand = new RelayCommand(p => new UpdateKommuneWindow(Selected).ShowDialog());
             KommuneCommand = new RelayCommand(p => new KommuneWindow().ShowDialog());
             ClearCommand = new RelayCommand(p => Clear());
             contacts = new ObservableCollection<KommuneData>(repository);
@@ -56,6 +59,19 @@ namespace ContactsEditor_MVVM.ViewModel
             }
         }
 
+        private KommuneData selected = new KommuneData();
+        public KommuneData Selected
+        {
+            get { return selected; }
+            set
+            {
+                if (!selected.Equals(value))
+                {
+                    selected = value;
+                    OnPropertyChanged("Selected");
+                }
+            }
+        }
         public string OldAgeGrp
         {
             get { return oldAgeGrp; }
