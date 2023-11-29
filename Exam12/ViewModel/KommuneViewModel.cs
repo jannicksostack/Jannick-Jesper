@@ -78,8 +78,6 @@ namespace ContactsEditor_MVVM.ViewModel
             }
         }
 
-        public Kommune SelectedModelTargetNullValue => new Kommune();
-
         public Kommune SelectedModel
         {
             get { return model; }
@@ -87,16 +85,14 @@ namespace ContactsEditor_MVVM.ViewModel
             {
                 if(value == null)
                 {
-                    return;
+                    value = new Kommune();
                 }
-                else
-                {
-                    model = value;
-                    OnPropertyChanged("Code");
-                    OnPropertyChanged("Name");
-                    OnPropertyChanged("SelectedModel");
-                }
-                
+
+                model = value;
+                OnPropertyChanged("Code");
+                OnPropertyChanged("Name");
+                OnPropertyChanged("SelectedModel");
+
             }
         }
 

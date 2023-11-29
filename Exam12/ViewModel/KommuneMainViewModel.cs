@@ -65,7 +65,10 @@ namespace ContactsEditor_MVVM.ViewModel
             get { return selected; }
             set
             {
-                if (value == null) { return; }
+                if (value == null) {
+                    value = new KommuneData();
+                }
+
                 if (!selected.Equals(value))
                 {
                     selected = value;
